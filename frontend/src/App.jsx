@@ -1,17 +1,18 @@
 import './styles/style.scss'
 import Layout from './components/Layout'
+import PokeCard from './components/PokeCard'
 import { Routes, Route } from 'react-router-dom'
 import React from 'react'
 import Home from './components/Home'
 
 function App() {
-
+  
   return (
     <>
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-         
+          
         </Routes>
       </Layout>
     </>
