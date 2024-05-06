@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 
-function PokeCard({pokeFetch}) {
+function PokeCard({pokeData}) {
     return (
         <article>
-            <ul>
-                {pokeFetch?.map((poke, index) => {
+                {pokeData?.map((poke, index) => {
                     let paddedId;
                     if (poke.id < 10) {
                         paddedId = '00' + poke.id;
@@ -21,7 +20,6 @@ function PokeCard({pokeFetch}) {
                         </section>
                     );
                 })}
-            </ul> 
         </article>
     );
 }
