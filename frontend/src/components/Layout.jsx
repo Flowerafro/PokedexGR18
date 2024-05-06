@@ -1,4 +1,5 @@
 import Teams from "./Teams";
+import PokeCard from "./PokeCard";
 import { Link } from "react-router-dom";
 
 export default function Layout({children}) {
