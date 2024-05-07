@@ -6,8 +6,8 @@ export default function Layout({children}) {
     return (
         <>
         <header>
-            <Link to={"/"}><img id="pokeball" src="#" alt="logo" />UIN pokedex</Link>
-            <Link to={"/teams"}>TEAMS</Link>
+            <Link to={"/"}><img id="pokeball" src="#" alt="logo" />UIN Pokedex</Link>
+            <Link to={"/teams"}>Teams</Link>
             <input type="search" />
         </header>
         <main>

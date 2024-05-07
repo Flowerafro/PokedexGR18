@@ -30,13 +30,12 @@ export default function Home() {
   
     return (
         <>
-        <section>
+        <section id="pokemons">
             <h1>Main pokemons</h1>
             <PokeCard pokeData={pokeData}/>
         </section>
-
-        <section>
-        <Type pokemon={pokemon}/>
+        <section id="types">
+            <Type pokemon={pokemon}/>
         </section>
     </>
         
