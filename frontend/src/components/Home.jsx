@@ -19,7 +19,7 @@ export default function Home() {
     const getPokemonData = async (url) => {
         fetch(url)
           .then(response => response.json())
-          .then(data => setPokeData(prevState => [...prevState, data]))
+          .then(data => setPokeData(prevState => [...prevState, data])) //https://chat.openai.com/share/c9fa4901-bfc8-474c-b193-d48614373831 Jeg brukte chathpt her for å få til å lagre på usestaten når det allerede er data på den uten å overskrive :)
           .catch(error => console.error(error))
     }
     console.log(pokeData)
