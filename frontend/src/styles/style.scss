@@ -5,7 +5,7 @@ body {
     #root {
         width: 100%;
         height: 100%;
-        max-width: 1200px;
+        max-width: 1400px;
         
         header {
             display: flex;
@@ -20,19 +20,31 @@ body {
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 2rem;
 
-            .pokemons {
+            #pokemons {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
                 width: 100%;
 
                 article {
-                    max-width: 200px; //Funker ikke, men trenger vi noe liknende?
+                    //max-width: 200px; //Funker ikke, men trenger vi noe liknende?
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    min-width: 200px;
                 }
             }
 
             #types {
-                display: flex;
+                article{
+                    width: 150px;
+                    background-color: green;
+
+                    img{
+                        width: 50px;
+                    }
+                }
 
                 button {
 

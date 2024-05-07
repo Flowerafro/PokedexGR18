@@ -1,5 +1,5 @@
 import PokeCard from "./PokeCard";
-import Type from "./Type";
+import TypeCard from "./TypeCard";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -35,7 +35,7 @@ export default function Home() {
             <PokeCard pokeData={pokeData}/>
         </section>
         <section id="types">
-            <Type pokemon={pokemon}/>
+            <TypeCard pokemon={pokemon}/>
         </section>
     </>
         
