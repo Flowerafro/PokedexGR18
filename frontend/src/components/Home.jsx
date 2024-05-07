@@ -35,7 +35,7 @@ export default function Home() {
             <PokeCard pokeData={pokeData}/>
         </section>
         <section id="types">
-            <TypeCard pokemon={pokemon}/>
+            <TypeCard />
         </section>
     </>
         

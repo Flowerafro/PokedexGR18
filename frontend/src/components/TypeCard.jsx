@@ -1,14 +1,14 @@
 // Skal dette komponentet representere utskriften av type-knappene? Altså inneholde:
 
-//1: Mapping av typer som ligger i API-et
-//2: Mapping av type-ikoner som vi lager en .js-fil med en array for
+//1: Mapping av typer som ligger i API-et <3
+//2: Utskrift av ikoner basert på slugen eller type.name
 //3: Mapping av farger som ligger i _color.scss
 //4: Sammenfletting av disse 3 mappene slik at vi får en utskrift av alle typekortene
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function TypeCard({pokemon}) {
+export default function TypeCard({}) {
 
     const [type, setType] = useState([])
 
@@ -25,9 +25,9 @@ export default function TypeCard({pokemon}) {
 
     return (
         <>
-        {type?.map((type, index) => {
+        {type?.map((type) => {
             return (
-            <Link to={"/type"}><button key={type.name}>{type.name}</button></Link> // Her kan vi legge inn navn fra mappingen for at typen skal sendes til slugen, som vi trenger i komponentet
+            <Link to={`/type/${type.name}`} key={type.name}><button>{type.name}</button></Link>
             )
         })}
         </>
