@@ -16,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/teams" element={<Teams />} />
           <Route path="/type" element={<Type />} />
+          <Route path="/pokemon" element={<Type />} />
         </Routes>
       </Layout>
     </>

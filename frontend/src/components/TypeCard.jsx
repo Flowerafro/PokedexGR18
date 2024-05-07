@@ -27,7 +27,7 @@ export default function TypeCard({pokemon}) {
         <>
         {type?.map((type, index) => {
             return (
-            <Link to={"/Type"}><button key={index}>{type.name}</button></Link>
+            <Link to={"/type"}><button key={type.name}>{type.name}</button></Link> // Her kan vi legge inn navn fra mappingen for at typen skal sendes til slugen, som vi trenger i komponentet
             )
         })}
         </>
