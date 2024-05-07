@@ -6,13 +6,14 @@
 //4: Sammenfletting av disse 3 mappene slik at vi får en utskrift av alle typekortene
 
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function TypeCard({pokemon}) {
 
     const [type, setType] = useState([])
 
     const getType = async () => {
-        fetch(`https://pokeapi.co/api/v2/type/4/`)
+        fetch(`https://pokeapi.co/api/v2/type/`)
             .then(response => response.json())
             .then(data => setType(data.results))
             .catch(error => console.error(error))
@@ -24,11 +25,11 @@ export default function TypeCard({pokemon}) {
 
     return (
         <>
-        <article>
-            <img src="type-symbols/bug.png" alt="logo" />
-            <h3>bug</h3>
-        </article>
-   
+        {type?.map((type, index) => {
+            return (
+            <Link to={"/Type"}><button key={index}>{type.name}</button></Link>
+            )
+        })}
         </>
     )
 }

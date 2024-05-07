@@ -9,6 +9,7 @@ export default function Type(pokemon) {
     // Kanskje vi trenger både en ny fetch og filter??
     return (
         <>
+        <h2>Type</h2>
         {/* {pokemon?.filter((card, index, slug) => {
             return <PokeCard  slug={slug} key={index} card={card}/>;
             })} */}
