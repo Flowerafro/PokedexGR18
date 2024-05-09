@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom"
 import { useState, useEffect } from "react"
+import PokeCard from "./PokeCard"
 
 //Dette komponentet inneholder en mapping av fetch-en som henter pokemon-endepunktet i API-et og filtrerer på slugen??
 
@@ -34,15 +35,7 @@ export default function Type() {
     
     return (
         <>
-        {pokemonUrl?.map((pokeUrl, index) => {
-            return (
-                <Link key={index} to={`/pokemon/${pokeUrl.name}`}><article key={index}>
-                    <img src={pokeUrl.sprites.front_default} alt={pokeUrl.name} />
-                    <h2>{pokeUrl.name}</h2>
-                    <p>paddedId</p>
-                </article></Link>
-            )
-        })}
+        <PokeCard pokeData={pokemonUrl}/>
         </>
     )
 }
