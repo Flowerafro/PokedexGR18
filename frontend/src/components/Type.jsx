@@ -11,7 +11,7 @@ export default function Type() {
     const [pokemonUrl, setPokemonUrl] = useState([])
 
     const getTypeSlug = async () => {
-        fetch(`https://pokeapi.co/api/v2/type/${slug}?limit=10`)
+        fetch(`https://pokeapi.co/api/v2/type/${slug}`)
             .then(response => response.json())
             .then(data => {
                 setTypeSlug(data.pokemon);
