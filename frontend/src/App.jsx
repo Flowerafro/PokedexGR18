@@ -8,6 +8,7 @@ import Teams from './components/Teams'
 import Layout from './components/Layout'
 import Pokemon from './components/Pokemon'
 import PokeCard from './components/PokeCard'
+import SearchResults from './components/SearchResults'
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
           <Route path="/teams" element={<Teams />} />
           <Route path="/type/:slug" element={<Type />} />
           <Route path="/pokemon/:slug" element={<Pokemon />} />
+          <Route path="/searchresults/:slug" element={<SearchResults />} />
         </Routes>
       </Layout>
     </>
