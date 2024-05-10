@@ -1,25 +1,6 @@
-import { useEffect, useState } from "react";
-import PokeCard from "./PokeCard";
-
-export default function SearchResults({pokeSearch, setPokeSearch, input}) {
-    
-   
-
-    const getPokeSearch = async () => {
-        fetch(`https://pokeapi.co/api/v2/pokemon/${input}`)
-            .then(response => response.json())
-            .then(data => setPokeSearch(data.results))
-            .catch(error => console.error(error + "noe gikk galt"));
-    }
-
-    useEffect(() => {
-        getPokeSearch();
-    }, [input]);
-
+export default function SearchResults() {
     return (
-        <>
-            
-            <PokeCard pokeData={pokeSearch} />
-        </>
-    );
+        <h2>Search results</h2>
+    )
 }
+

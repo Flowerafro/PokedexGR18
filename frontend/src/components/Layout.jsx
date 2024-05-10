@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import SearchResults from "./SearchResults";
+
 
 export default function Layout({children, getPokeSearch}) {
 
@@ -16,7 +16,7 @@ export default function Layout({children, getPokeSearch}) {
             <form action="">
                 <label htmlFor="search"></label>
                 <input type="text" id="search" onChange={(e) => setInput(e.target.value)} />
-                <Link to={`/searchresults/${input}`}><button onClick={getPokeSearch}>søk</button></Link>
+                {/* <Link to={`/searchresults/${input}`}><button onClick={getPokeSearch}>søk</button></Link> */}
                 
             </form>
             
