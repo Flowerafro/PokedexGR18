@@ -35,6 +35,7 @@ export default function Type() {
     
     return (
         <>
+        <section id="pokemons">
         {pokemonUrl?.map((poke, index) => {
                     let paddedId;
                     if (poke.id < 10) {
@@ -53,6 +54,7 @@ export default function Type() {
                         />
                     );
                 })}
+        </section>
         </>
     )
 }
