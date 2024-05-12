@@ -34,7 +34,7 @@ export default function Home() {
             {pokeData?.map((poke, index) => {
                 return (
                     <PokeCard 
-                        key={index} 
+                        key={index}
                         name={poke.name} 
                         id={poke.id} 
                         image={poke.sprites.front_default}

@@ -11,13 +11,15 @@ function PokeCard({name, id, index, image}) {
         paddedId = id;
     }
 
-    return (
+    return ( // Index i utskriften er ikke knyttet til index-propen tror jeg?!!
         <>
-        <Link key={index} to={`/pokemon/${name}`}><article key={index}>
-            <img src={image} alt={name} />
-            <h2>{name}</h2>
-            <p>#{paddedId}</p>
-        </article></Link>
+        <Link key={index} to={`/pokemon/${name}`}>
+            <article key={index}>
+                <img src={image} alt={name} />
+                <h2>{name}</h2>
+                <p>#{paddedId}</p>
+            </article>
+        </Link>
         </>
     );
 }
