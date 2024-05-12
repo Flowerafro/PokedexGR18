@@ -1,9 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-//Hvorfor kommer pokemon nummer 5 før pokemon nummer 4?
+function PokeCard({name, id, index, image}) {
+    let paddedId;
+    if (id < 10) {
+        paddedId = '00' + id;
+    } else if (id < 100) {
+        paddedId = '0' + id;
+    } else {
+        paddedId = id;
+    }
 
-function PokeCard({name, paddedId, index, image}) {
     return (
         <>
         <Link key={index} to={`/pokemon/${name}`}><article key={index}>
