@@ -1,30 +1,26 @@
+@import 'font';
+@import 'color';
+@import 'PokeCard'; 
+@import 'header';
+
+
 body {
     margin: 0;
     padding: 0;
     
     #root {
         width: 100%;
-        height: 100%;
-        max-width: 1400px;
+        height: auto;
+        max-width: 100vw;
         
-        header {
-            display: flex;
-            flex-wrap: wrap;
-            text-align: center;
-            justify-content: space-between;
-            width: 100%;
-            align-items: center;
 
-            a {
-                display: flex;
-                align-items: center;
-            }
-        }
 
         main {
             display: flex;
             flex-direction: column;
             align-items: center;
+            
+            
             padding: 2rem;
 
             #pokemons {
@@ -33,23 +29,23 @@ body {
                 width: 100%;
                 gap: 1rem;
 
+                
+                margin-bottom: 5rem;
+
                 article {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    min-width: 200px;
-                    border-radius: 3px;
-                    background-color: rgb(247, 247, 247);
+                    @include pokecard;
+                    
                 }
             }
 
             #types {
                 display: flex;
                 flex-wrap: wrap;
-                max-width: 900px;
+                max-width: 60vw;
 
                 a {
                     padding: 10px;
+                    text-decoration: none;
 
                     :hover {
                         background-color: white;

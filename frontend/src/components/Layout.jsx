@@ -14,11 +14,14 @@ export default function Layout({children}) {
     return (
         <>
         <header>
+            <nav>
             <Link to={"/"}><img id="pokeball" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="logo" />UIN Pokedex</Link>
             <Link to={"/teams"}>Teams</Link>
+            </nav>
+            
             <form onSubmit={handleSubmit}>
-                <label htmlFor="search">Søk etter pokemon</label>
-                <input type="text" id="search" placeholder="Pikachu" onChange={(e) => setInput(e.target.value)}></input>
+                <label htmlFor="search"></label>
+                <input type="text" id="search" placeholder="Søk etter pokemon" onChange={(e) => setInput(e.target.value)}></input>
                 <Link to={`/searchresults/${input}`}><input type="submit" value="Søk"></input></Link>
             </form>
         </header>

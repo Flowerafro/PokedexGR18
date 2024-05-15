@@ -1,5 +1,4 @@
 import './styles/style.scss'
-import './styles/_color.scss'
 import { Routes, Route } from 'react-router-dom'
 import React from 'react'
 import Type from './components/Type'

@@ -1,0 +1,19 @@
+// styling PokeCard
+
+@mixin pokecard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 200px;
+    margin: 1rem;
+    padding: 1rem 0.5rem;
+
+    border-radius: 1rem;
+    background-color: rgb(253, 253, 253);
+    box-shadow: 15px 25px 11px 0px rgba(0,0,0,0.1);
+    color: black;
+    text-decoration: none !important;
+        text-transform: capitalize;
+
+}

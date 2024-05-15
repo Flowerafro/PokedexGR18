@@ -1,0 +1,54 @@
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    width: 100%;
+
+    font-family: "roboto", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 0 1rem;
+        width: 50%;
+        a {
+                display: flex;
+                align-items: center;
+            }
+    }
+   
+
+    form {
+        display: flex;
+        justify-content: end;
+        width: 50%;
+
+        padding: 0 1rem;
+
+        input {
+            border: 1px grey solid;
+            border-radius: 0.5rem 0 0 0.5rem ;
+            padding: 0.5rem;
+            width: 100%;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            
+            input {
+                border: 1px grey solid;
+                background-color: grey;
+                border-radius: 0 0.5rem 0.5rem 0;
+                color: white;
+                height:100%;
+                // Få in font awesome ikon av forstørrelsesglass
+            }
+        }
+    }
+}
