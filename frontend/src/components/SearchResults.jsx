@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import PokeCard from "./PokeCard"
 
 export default function SearchResults() {
 
     const {slug} = useParams() 
     const [result, setResult] = useState()
 
+    //state til loading slik at result er tilgjengelig når komp renderes
+    const [loading, setLoading] = useState(true)
+
     const getResult = async() => {
         try{
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${slug}`)
             const data = await response.json()
             setResult(data)
+            setLoading(false)
         } catch {
             console.error("Det har skjedd en feil")
         }
@@ -21,22 +26,20 @@ export default function SearchResults() {
     }, [slug])
 
     console.log(result)
+
+    if(loading){
+        return <p> Searching for pokemon ...</p>
+    }
     
     return (
         <>
-        <img src={result?.sprites.front_default} alt={result?.name} />
-        <h3>{result?.name}</h3>
-        <h3>{result?.id}</h3>
+        <PokeCard 
+            key={result.id}
+            image={result?.sprites.front_default}
+            name={result?.name}
+            id={result?.id} 
+            />
         </>
-
-        // Har ikke fått til å sende som props til pokeCard ennå, så hardkodet over her
-
-        // <PokeCard
-        //     name={result?.name} 
-        //     id={result?.id} 
-        //     image={result?.sprites.front_default}
-        // />
-        
     )
 }
 
