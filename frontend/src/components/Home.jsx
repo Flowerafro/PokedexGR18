@@ -28,10 +28,13 @@ export default function Home() {
     getPokemon()
     }, [])
 
+    // filter / sort / slice = sørger for at de 9 første vises fra 1-9
     return (
         <> 
-        <section id="pokemons">
-            {pokeData?.map((poke, index) => {
+         <section id="pokemons">
+            {pokeData?.filter(poke => poke.id <= 9)
+            .sort((a, b) => a.id - b.id)
+            .map((poke, index) => {
                 return (
                     <PokeCard 
                         key={index}

@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
+import TypeCard from "./TypeCard"
 
 export default function Pokemon() {
 
@@ -22,13 +23,16 @@ export default function Pokemon() {
     return (
         <section id="pokemon">
             {itAll.sprites && (
-                <article>
-                    <h1>{itAll.name.charAt(0).toUpperCase() + itAll.name.slice(1)}</h1>
-                    <img src={itAll.sprites.other?.['official-artwork'].front_default} alt={itAll.name} />
-                    <p>Height:{itAll.height}</p>
-                    <p>Weight:{itAll.weight}</p>
-                    <p>Types:{itAll.types?.map(type => type.type.name).join(', ')}</p>
+                <>
+                <article className="pokemon-img">
+                <h1>{itAll.name.charAt(0).toUpperCase() + itAll.name.slice(1)}</h1>
+                <img src={itAll.sprites.other?.['official-artwork'].front_default} alt={itAll.name} />  
                 </article>
+                <article className="pokemon-type">
+                    <h1>Types</h1>
+                    {itAll.types?.map((type, index) => <p key={index} className={`${type.type.name}`}>{type.type.name}</p>)}
+                </article>
+                </>
             )}
         </section>
     )}
