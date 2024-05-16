@@ -41,21 +41,12 @@ export default function Pokemon() {
         <section id="pokemon">
             {itAll.sprites && (
                 <>
+                <section>
                 <article className="pokemon-img">
                 <h1>{itAll.name.charAt(0).toUpperCase() + itAll.name.slice(1)}</h1>
                 <img src={itAll.sprites.other?.['official-artwork'].front_default} alt={itAll.name} />  
                 </article>
                 
-                <article className="pokemon-type">
-                    <h1>Types</h1>
-                    {itAll.types?.map((type, index) => (<TypeCard key={index} name={type.type.name} />))}
-                </article>
-
-                <article className="pokemon-stats">
-                    <h1>Stats</h1>
-                    {itAll.stats?.map((stat, index) => <p key={index}>{stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}: {stat.base_stat}</p>)}
-                </article>
-
                 <article className="pokemon-abilities">
                 <h1>Abilities</h1>
                 {itAll.abilities?.map((ability, index) => (
@@ -66,7 +57,25 @@ export default function Pokemon() {
                     </div>
                 ))}
                 </article>
+                </section>
 
+                <section>
+                <article className="pokemon-type">
+                    <h1>Types</h1>
+                    {itAll.types?.map((type, index) => (<TypeCard key={index} name={type.type.name} />))}
+                </article>
+
+                <article className="pokemon-stats">
+                  <h1>Stats</h1>
+                  {itAll.stats?.map((stat, index) => (
+                      <ul key={index} className="stats">
+                          <li>{stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}: </li>
+                          <progress value={stat.base_stat} max="100"></progress>
+                          <li>{stat.base_stat}</li>
+                      </ul>
+                  ))}
+              </article>
+                </section>
                 </>
             )}
         </section>

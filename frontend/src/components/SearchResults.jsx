@@ -12,25 +12,23 @@ export default function SearchResults() {
     const [loadingMessage, setLoadingMessage] = useState("Søker etter pokemon ...")
 
     const getResult = async() => {
+        setLoading(true) // for hvert søk settes loading til true/default
         try{
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${slug}`)
             const data = await response.json()
             setResult(data)
-            setLoading(false)
+            setLoading(false) 
         } catch {
             console.error("Det har skjedd en feil")
+            setLoadingMessage("Det du søker etter finnes ikke..")
         }
     }
 
     useEffect(()=> {
         getResult()
+    } , [slug])
 
-        const timeOut = setTimeout(() => {
-            setLoadingMessage('Det du søker etter finnes ikke..')
-        }, 5000);
-        return () => clearTimeout(timeOut)
-    }, [slug])
-
+   
     console.log(result)
 
     // når søket skjer vises en "loading-melding" og om søket ikke gir resultat, vil en feilmelding vises
@@ -40,18 +38,20 @@ export default function SearchResults() {
             {loadingMessage === 'Det du søker etter finnes ikke..' && <img src="/src/assets/sadpikachu.png" alt="sadPokemon" />}
             <p className="notfound">{loadingMessage}</p>
             </>   
-    )
+    ) 
+    } else {
+        return (
+            <>
+            <PokeCard 
+                key={result.id}
+                image={result?.sprites.front_default}
+                name={result?.name}
+                id={result?.id} 
+                />
+            </>
+           
+        )
     }
-    
-    return (
-        <>
-        <PokeCard 
-            key={result.id}
-            image={result?.sprites.front_default}
-            name={result?.name}
-            id={result?.id} 
-            />
-        </>
-    )
+   
 }
 
