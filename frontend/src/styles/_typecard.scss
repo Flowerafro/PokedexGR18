@@ -1,0 +1,30 @@
+// styling til alle typeCards
+
+.typecard {
+    padding: 10px;
+    text-decoration: none;
+
+    :hover {
+        background-color: white;
+    }
+
+    button {
+        height: 50px;
+        width: 120px;
+        display: flex;
+        border-style: none;
+        border-radius: 3px;
+        align-items: center;
+        gap: 7px;
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+
+        h2 {
+            font-size: 12px;
+        }
+
+    }
+}    

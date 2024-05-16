@@ -2,6 +2,7 @@
 @import 'color';
 @import 'PokeCard'; 
 @import 'header';
+@import 'typecard';
 
 
 body {
@@ -43,39 +44,11 @@ body {
                 flex-wrap: wrap;
                 max-width: 60vw;
 
-                a {
-                    padding: 10px;
-                    text-decoration: none;
-
-                    :hover {
-                        background-color: white;
-                    }
-
-                    button {
-                        height: 50px;
-                        width: 120px;
-                        display: flex;
-                        border-style: none;
-                        border-radius: 3px;
-                        align-items: center;
-                        gap: 7px;
-
-                        img {
-                            width: 30px;
-                            height: 30px;
-                        }
-
-                        h2 {
-                            font-size: 12px;
-                        }
-
-                    }
-                }    
+                
             }
 
             // styling til feilmelding
             .notfound {
-               
                 margin-top: 10rem ;
                 font-family: 'Roboto', sans-serif;
                 font-size: 1.5rem;
@@ -93,11 +66,6 @@ body {
                     display: flex;
                     flex-direction: column;
                     gap: 1rem;
-
-                    p {
-                        padding: 1rem;
-                        border-radius: 0.5rem;
-                    }
                 }
             }
         }

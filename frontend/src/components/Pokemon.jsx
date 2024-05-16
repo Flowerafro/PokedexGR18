@@ -30,7 +30,7 @@ export default function Pokemon() {
                 </article>
                 <article className="pokemon-type">
                     <h1>Types</h1>
-                    {itAll.types?.map((type, index) => <p key={index} className={`${type.type.name}`}>{type.type.name}</p>)}
+                    {itAll.types?.map((type, index) => (<TypeCard key={index} name={type.type.name} />))}
                 </article>
                 </>
             )}

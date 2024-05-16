@@ -1,33 +1,17 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function TypeCard() {
-
-    const [type, setType] = useState([])
-
-    const getType = async () => {
-        fetch(`https://pokeapi.co/api/v2/type/`)
-        .then(response => response.json())
-        .then(data => setType(data.results))
-        .catch(error => console.error(error))
-    }
-
-    useEffect(()=> {
-        getType()
-    }, [])
+export default function TypeCard({ index, name }) {
+    
 
     return (
         <>
-        {type?.map((type) => {
-            return (
-                <Link to={`/type/${type.name}`} key={type.name}>
-                    <button className={`${type.name}`}>
-                        <img src={`src/assets/${type.name}.png`}/>
-                        <h2>{type.name.charAt(0).toUpperCase() + type.name.slice(1)}</h2>
-                    </button>
-                </Link>
-            )
-        })}
+        <Link to={`/type/${name}`} key={index} className="typecard">
+            <button className={`${name}`}>
+            <img src={`/src/assets/${name}.png`}/>
+            <h2>{name.charAt(0).toUpperCase() + name.slice(1)}</h2>
+            </button>
+        </Link>
         </>
     )
 }

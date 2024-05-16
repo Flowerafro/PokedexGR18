@@ -6,7 +6,10 @@ export default function Home() {
 
     const [pokemon, setPokemon] = useState([])
     const [pokeData, setPokeData] = useState([])
-    
+    // state til Type
+    const [type, setType] = useState([])
+
+    // FETCH til POKEMON
     const getPokemon = async () => {
         fetch(`https://pokeapi.co/api/v2/pokemon?limit=9`)
         .then(response => response.json())
@@ -23,12 +26,23 @@ export default function Home() {
         .then(data => setPokeData(prevState => [...prevState, data])) //https://chat.openai.com/share/c9fa4901-bfc8-474c-b193-d48614373831 Jeg brukte chathpt her for å få til å lagre på usestaten når det allerede er data på den uten å overskrive :)
         .catch(error => console.error(error))
     }
+
+    // Fetch til TYPES
+    const getType = async () => {
+        fetch(`https://pokeapi.co/api/v2/type/`)
+        .then(response => response.json())
+        .then(data => setType(data.results))
+        .catch(error => console.error(error))
+    }
+
+
     
     useEffect(() => {
     getPokemon()
+    getType()
     }, [])
 
-    // filter / sort / slice = sørger for at de 9 første vises fra 1-9
+    
     return (
         <> 
          <section id="pokemons">
@@ -45,8 +59,17 @@ export default function Home() {
                 );
             })}
         </section>
+
         <section id="types">
-            <TypeCard />
+            {type?.map((type, index) => {
+                return (
+                    <TypeCard
+                    key={index}
+                    name={type.name}
+                     />
+                )
+            })}
+            
         </section>
         </>
         
