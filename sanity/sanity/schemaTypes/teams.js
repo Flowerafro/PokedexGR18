@@ -2,15 +2,15 @@ export const teams = {
     title: "Teams",
     name: "teams",
     type: "document",
-    field: [
+    fields: [
         {
-            title: "Navn",
-            name: "Teamname",
+            title: "Tittel",
+            name: "title",
             type: "string"
         },
         {
-            title: "Teambilde",
-            name: "teamimage",
+            title: "Bilde",
+            name: "image",
             type: "image"
         },
         {
@@ -18,10 +18,16 @@ export const teams = {
             name: "slug_url",
             type: "slug",
             options: {
-                source: "Teamname",
+                source: "title",
                 slugify: input => input.toLowerCase().replace(/\s+/g, '-')
             }
+        }, 
+        {
+            title: "Pokemon",
+            name: "pokemon",
+            type: "reference",
+            to: [{type: "teammembers"}]
         }
-        // her skal det også inn en Pokemon
+       
     ]
 }

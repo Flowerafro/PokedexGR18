@@ -31,5 +31,7 @@ export default App;
 
 
 /* 
-          <Route path="/searchresults/:pokemon" element={<SearchResults />} />
+Tror vi må ha en route til Teams som sender brukeren til en liste over Pokemons som er under laget
+<Route path="/teammembers" element={<Teams />} />
+        
 */

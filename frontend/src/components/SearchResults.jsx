@@ -9,7 +9,7 @@ export default function SearchResults() {
     //state til loading slik at result er tilgjengelig når komp renderes
     const [loading, setLoading] = useState(true)
     // state til feilmelding hvis pokemon ikke finnes i søk
-    const [loadingMessage, setLoadingMessage] = useState("Searching for pokemon ...")
+    const [loadingMessage, setLoadingMessage] = useState("Søker etter pokemon ...")
 
     const getResult = async() => {
         try{
