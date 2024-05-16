@@ -32,6 +32,10 @@ export default function Pokemon() {
                     <h1>Types</h1>
                     {itAll.types?.map((type, index) => <p key={index} className={`${type.type.name}`}>{type.type.name}</p>)}
                 </article>
+                <article className="pokemon-stats">
+                    <h1>Stats</h1>
+                    {itAll.stats?.map((stat, index) => <p key={index}>{stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}: {stat.base_stat}</p>)}
+                </article>
                 </>
             )}
         </section>
