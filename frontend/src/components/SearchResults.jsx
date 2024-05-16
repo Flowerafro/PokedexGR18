@@ -6,9 +6,10 @@ export default function SearchResults() {
 
     const {slug} = useParams() 
     const [result, setResult] = useState()
-
     //state til loading slik at result er tilgjengelig når komp renderes
     const [loading, setLoading] = useState(true)
+    // state til feilmelding hvis pokemon ikke finnes i søk
+    const [loadingMessage, setLoadingMessage] = useState("Searching for pokemon ...")
 
     const getResult = async() => {
         try{
@@ -23,12 +24,17 @@ export default function SearchResults() {
 
     useEffect(()=> {
         getResult()
+
+        const timeOut = setTimeout(() => {
+            setLoadingMessage('Det du søker etter finnes ikke..')
+        }, 5000);
+        return () => clearTimeout(timeOut)
     }, [slug])
 
     console.log(result)
 
     if(loading){
-        return <p> Searching for pokemon ...</p>
+        return <p className="notfound">{loadingMessage}</p>
     }
     
     return (
