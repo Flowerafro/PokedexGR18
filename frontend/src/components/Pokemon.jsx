@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 export default function Pokemon() {
 
     const {slug} = useParams()
-    const [itAll, setItAll] = useState()
+    const [itAll, setItAll] = useState([])
 
     const getItAll = async () => {
         fetch(`https://pokeapi.co/api/v2/pokemon/${slug}/`) //Kaaaanskje endre denne fetchen til en slik vi har i search-results? Siden vi her også bare skal hente ett objekt?
@@ -20,6 +20,15 @@ export default function Pokemon() {
     console.log("itAll" + itAll)
 
     return (
-        <h2>{slug}</h2>
-    )
-}
+        <section id="pokemon">
+            {itAll.sprites && (
+                <div>
+                    <h1>{itAll.name.charAt(0).toUpperCase() + itAll.name.slice(1)}</h1>
+                    <img src={itAll.sprites.other?.['official-artwork'].front_default} alt={itAll.name} />
+                    <p>Height:{itAll.height}</p>
+                    <p>Weight:{itAll.weight}</p>
+                    <p>Types:{itAll.types?.map(type => type.type.name).join(', ')}</p>
+                </div>
+            )}
+        </section>
+    )}

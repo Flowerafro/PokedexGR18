@@ -23,7 +23,7 @@ export default function TypeCard() {
                 <Link to={`/type/${type.name}`} key={type.name}>
                     <button className={`${type.name}`}>
                         <img src={`src/assets/${type.name}.png`}/>
-                        <h2>{type.name}</h2>
+                        <h2>{type.name.charAt(0).toUpperCase() + type.name.slice(1)}</h2>
                     </button>
                 </Link>
             )
