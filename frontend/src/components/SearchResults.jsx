@@ -33,8 +33,14 @@ export default function SearchResults() {
 
     console.log(result)
 
+    // når søket skjer vises en "loading-melding" og om søket ikke gir resultat, vil en feilmelding vises
     if(loading){
-        return <p className="notfound">{loadingMessage}</p>
+        return (
+            <>
+            {loadingMessage === 'Det du søker etter finnes ikke..' && <img src="/src/assets/sadpikachu.png" alt="sadPokemon" />}
+            <p className="notfound">{loadingMessage}</p>
+            </>   
+    )
     }
     
     return (
