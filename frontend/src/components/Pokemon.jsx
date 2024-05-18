@@ -39,8 +39,8 @@ export default function Pokemon() {
       {details?.sprites && (
         <>
           <section>
-            <article className="pokemon-img">
-              <h1>{details.name.charAt(0).toUpperCase() + details.name.slice(1)}</h1>
+          <h1>{details.name.charAt(0).toUpperCase() + details.name.slice(1)}</h1>
+            <article className={`pokemon-img ${details ? details.types[0].type.name : ''}`}>
               <img src={details.sprites.other?.['official-artwork'].front_default} alt={details.name} />  
             </article>
             

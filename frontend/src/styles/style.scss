@@ -61,6 +61,7 @@ body {
                 display: flex;
                 flex-direction: row;
                 gap: 2rem;
+                
 
                 section {
                     width: 50%;
@@ -68,18 +69,22 @@ body {
                     .pokemon-img {
                     width: 400px;
                     height: auto;
+                    border-radius: 1rem;
 
                     img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
                     }
+
+                    
                 }
 
                 .pokemon-type{
                     display: flex;
                     flex-direction: row;
                     gap: 1rem;
+                    
                 }
 
                 .pokemon-stats {

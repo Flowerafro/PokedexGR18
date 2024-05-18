@@ -37,9 +37,11 @@ export default function Home({pokeData, setPokeData}) {
 
     
     useEffect(() => {
-    getPokemon()
+        if(pokeData.length === 0) {
+            getPokemon()
+        }
     getType()
-    }, [])
+    }, [pokeData])
 
     
     return (
