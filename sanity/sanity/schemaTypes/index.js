@@ -1,4 +1,4 @@
 import { teams } from './teams'
-import { teammembers } from './teammembers'
+import { pokemon } from './pokemon'
 
-export const schemaTypes = [teams, teammembers]
+export const schemaTypes = [teams, pokemon]

@@ -25,8 +25,8 @@ export const teams = {
         {
             title: "Pokemon",
             name: "pokemon",
-            type: "reference",
-            to: [{type: "teammembers"}]
+            type: "array",
+            of: [{type: "pokemon"}]
         }
        
     ]

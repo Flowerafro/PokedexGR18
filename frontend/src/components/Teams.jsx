@@ -9,7 +9,6 @@ export default function Teams() {
     useEffect(() => {
         fetchTeams()
         .then(data => {
-            console.log(data);
             setTeams(data)   
         })
     }, [])
@@ -21,7 +20,6 @@ export default function Teams() {
         <h1>Teams</h1>
             <section className='teams-box'>
             {teams.map((team, index) => {
-            console.log(team.image);
             return (
                 <Link key={index} to={`/teams/${team.slug}`} team={team.title}>
                     <button className="teams">
