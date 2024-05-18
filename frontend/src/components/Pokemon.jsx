@@ -8,6 +8,9 @@ export default function Pokemon() {
   const [details, setDetails] = useState()
   const [abilities, setAbilities] = useState([])
 
+  // Her har vi først brukt et forslag fra Copilot i VS code til å fetche og skrive ut pokemon-komponentet. Dette forslaget syns vi virket "for komplisert", og tenkte av vi kunne gjøre det mer som i home-komponentet.
+  // Vi brukte så Bing Copilot til å gjøre fetchen slik den er i home, slik vi mener er mer oversiktlig. I sette steget hjalp Bing Chat oss mest med sjekking av syntax og korrekturlesing.
+
   const getDetails = async () => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${slug}/`)
     .then(response => response.json())
@@ -46,8 +49,8 @@ export default function Pokemon() {
               {abilities?.map((ability, index) => (
                 <div key={index}>
                   <h2>{ability.name.charAt(0).toUpperCase() + ability.name.slice(1)}</h2>
-                  <p>Effect: {ability.effect_entries[0].effect}</p> {/* Filtrere etter engelsk */}
-                  <p>Short Effect: {ability.effect_entries[0].short_effect}</p> {/* Filtrere etter engelsk */}
+                  <p>Effect: {ability.effect_entries[1].effect}</p> {/* Filtrere etter engelsk, henter nå index 1, som ofte er engelsk*/}
+                  <p>Short Effect: {ability.effect_entries[1].short_effect}</p> {/* Filtrere etter engelsk, henter nå index 1, som ofte er engelsk*/}
                 </div>
               ))}
             </article>
