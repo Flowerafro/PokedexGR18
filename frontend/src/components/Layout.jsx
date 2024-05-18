@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export default function Layout({children}) {
 
@@ -22,7 +24,11 @@ export default function Layout({children}) {
             <form onSubmit={handleSubmit}>
                 <label htmlFor="search"></label>
                 <input type="text" id="search" placeholder="Søk etter pokemon" onChange={(e) => setInput(e.target.value)}></input>
-                <Link to={`/searchresults/${input}`}><input type="submit" value="Søk"></input></Link>
+                <Link to={`/searchresults/${input}`}>
+                <button type="submit" value="Søk">
+                <FontAwesomeIcon icon={faSearch} /> 
+                </button>
+            </Link>
             </form>
         </header>
         <main>

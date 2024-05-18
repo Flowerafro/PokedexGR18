@@ -9,15 +9,19 @@ import Pokemon from './components/Pokemon'
 import PokeCard from './components/PokeCard'
 import SearchResults from './components/SearchResults'
 import { useEffect, useState } from 'react'
+import TeamDisplay from './components/TeamDisplay'
 
 function App() {
+
+  const [pokeData, setPokeData] = useState([])
     
   return (
     <>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home pokeData={pokeData} setPokeData={setPokeData} />} />
           <Route path="/teams" element={<Teams />} />
+          <Route path="/teams/:slug" element={<TeamDisplay pokeData={pokeData} setPokeData={setPokeData} />} />
           <Route path="/type/:slug" element={<Type />} />
           <Route path="/pokemon/:slug" element={<Pokemon />} />
           <Route path="/searchresults/:slug" element={<SearchResults />} />

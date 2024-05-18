@@ -2,14 +2,14 @@ import PokeCard from "./PokeCard";
 import TypeCard from "./TypeCard";
 import { useEffect, useState } from "react";
 
-export default function Home() {
+export default function Home({pokeData, setPokeData}) {
 
     const [pokemon, setPokemon] = useState([])
-    const [pokeData, setPokeData] = useState([])
+    //const [pokeData, setPokeData] = useState([])
     // state til Type
     const [type, setType] = useState([])
 
-    // FETCH til POKEMON
+    // FETCH til MAIN POKEMON
     const getPokemon = async () => {
         fetch(`https://pokeapi.co/api/v2/pokemon?limit=9`)
         .then(response => response.json())
@@ -35,7 +35,6 @@ export default function Home() {
         .catch(error => console.error(error))
     }
 
-
     
     useEffect(() => {
     getPokemon()
@@ -45,6 +44,7 @@ export default function Home() {
     
     return (
         <> 
+        <h1>Main pokemon</h1>
          <section id="pokemons">
             {pokeData?.filter(poke => poke.id <= 9)
             .sort((a, b) => a.id - b.id)
@@ -60,6 +60,7 @@ export default function Home() {
             })}
         </section>
 
+        <h2>Types</h2>
         <section id="types">
             {type?.map((type, index) => {
                 return (
@@ -69,7 +70,6 @@ export default function Home() {
                      />
                 )
             })}
-            
         </section>
         </>
         

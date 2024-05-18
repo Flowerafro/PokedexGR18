@@ -6,10 +6,21 @@ export const teammembers = {
     type: "document",
     fields: [
         {
-            title: "Name",
+            title: "Navn",
             name: "name",
             type: "string",
             of: [{ type: "string" }]
+        }, 
+        {
+            title: "Nummer",
+            name: "number",
+            type: "number" 
+        }, 
+        {
+            title: "Team navn",
+            name: "teamname",
+            type: "string"
+
         }
         // trenger kanskje flere fields??
     ]

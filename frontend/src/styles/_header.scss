@@ -1,14 +1,15 @@
 
-
 header {
     display: flex;
     justify-content: space-between;
     padding: 1rem 0;
     width: 100%;
+    height: 3rem;
 
     font-family: "roboto", sans-serif;
     font-weight: 600;
     text-decoration: none;
+    box-shadow: 15px 9px 9px 0px rgba(0,0,0,0.1);;
 
     nav {
         display: flex;
@@ -18,6 +19,8 @@ header {
         a {
                 display: flex;
                 align-items: center;
+                text-decoration: none;
+                color: black;
             }
     }
    
@@ -31,7 +34,7 @@ header {
 
         input {
             border: 1px grey solid;
-            border-radius: 0.5rem 0 0 0.5rem ;
+            border-radius: 0.2rem 0 0 0.2rem ;
             padding: 0.5rem;
             width: 100%;
         }
@@ -41,14 +44,19 @@ header {
             align-items: center;
             text-decoration: none;
             
-            input {
+            button {
                 border: 1px grey solid;
-                background-color: grey;
+                background-color: #ffff;
                 border-radius: 0 0.5rem 0.5rem 0;
-                color: white;
-                height:100%;
+                width: 3rem;
+                height: 3rem;
+
+                .fa-solid.fa-magnifying-glass {
+                    color: black;
+                }
+                
                 // Få in font awesome ikon av forstørrelsesglass
             }
         }
     }
-}
+}  
