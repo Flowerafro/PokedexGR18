@@ -19,7 +19,8 @@ export const teammembers = {
         {
             title: "Team navn",
             name: "teamname",
-            type: "string"
+            type: "reference",
+            to: [{type: "teams"}]
 
         }
         // trenger kanskje flere fields??

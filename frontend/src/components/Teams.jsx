@@ -23,7 +23,7 @@ export default function Teams() {
             {teams.map((team, index) => {
             console.log(team.image);
             return (
-                <Link key={index} to={`/teams/${team.slug}`}>
+                <Link key={index} to={`/teams/${team.slug}`} team={team.title}>
                     <button className="teams">
                     <h2>{team.title}</h2>
                     <img src={team.imageUrl} alt={team.title} />
