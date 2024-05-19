@@ -39,17 +39,17 @@ export default function Pokemon() {
       {details?.sprites && (
         <>
           <article className={`pokemon-img ${details ? details.types[0].type.name : ''}`}> {/* Er dette endelig kode? Kilde her?*/}
-            <h2>{details.name.charAt(0).toUpperCase() + details.name.slice(1)}</h2>
+          <h2>{details.name.toUpperCase()}</h2>
             <img src={details.sprites.other?.['official-artwork'].front_default} alt={details.name} />
           </article>
 
           <section>
             <article className="pokemon-type">
-              <h2>Types</h2>
+              <h2>TYPE(S)</h2>
               {details.types?.map((type, index) => (<TypeCard key={index} name={type.type.name} />))}
             </article>
             <article className="pokemon-stats">
-              <h2>Stats</h2>
+              <h2>STATS</h2>
               {details.stats?.map((stat, index) => (
                 <ul key={index} className="stats">
                   <li>{stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}: </li>
@@ -61,7 +61,7 @@ export default function Pokemon() {
           </section>
 
           <article className="pokemon-abilities">
-            <h2>Abilities</h2>
+            <h2>ABILITIES</h2>
             {abilities?.map((ability, index) => (
               <section key={index}>
                 <h3>{ability.name.charAt(0).toUpperCase() + ability.name.slice(1)}</h3>

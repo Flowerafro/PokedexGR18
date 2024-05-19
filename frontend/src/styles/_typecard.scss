@@ -1,11 +1,13 @@
 // styling til alle typeCards
 
 .typecard {
-    padding: 10px;
+    margin: 10px;
     text-decoration: none;
 
     :hover {
-        background-color: white;
+        border-style: solid;
+        border-color: rgb(65, 63, 63);
+        cursor: pointer;
     }
 
     button {
@@ -20,10 +22,12 @@
         img {
             width: 30px;
             height: 30px;
+            pointer-events: none;
         }
 
         h2 {
             font-size: 12px;
+            pointer-events: none;
         }
 
     }

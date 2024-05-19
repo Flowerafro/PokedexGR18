@@ -12,9 +12,12 @@
 
     border-radius: 1rem;
     background-color: #f4f4f4;
-    box-shadow: 15px 25px 11px 0px rgba(0,0,0,0.1);
+    box-shadow: 10px 20px 10px 0px rgba(0,0,0,0.1);
     color: black;
     text-decoration: none !important;
     text-transform: capitalize;
 
+    &:hover {
+        transform: scale(1.05);
+    }
 }
