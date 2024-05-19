@@ -142,18 +142,24 @@ body {
                 justify-content: center;
                 align-items: center;
                 gap: 2rem;
+                
 
                 .teams {
                     width: 80%;
                     height: auto;
 
-                    border: none;
+                    border-style: solid;
+                    border-color: #ebe8e8;
+                    background-color: #f4f4f4;
                     border-radius: 1rem;
-                    background-color: rgb(253, 253, 253);
-                    box-shadow: 15px 25px 11px 0px rgba(0,0,0,0.1);
+                    box-shadow: 10px 20px 10px 0px rgba(0,0,0,0.1);
 
                     cursor: pointer;
                     font-size: 0.8rem;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
 
                     img {
                         width: 90%;
