@@ -65,8 +65,8 @@ export default function Pokemon() {
             {abilities?.map((ability, index) => (
               <section key={index}>
                 <h3>{ability.name.charAt(0).toUpperCase() + ability.name.slice(1)}</h3>
-                <p>Effect: {ability.effect_entries.find(entry => entry.language.name === 'en').effect}</p> {/* Filtrere etter engelsk, henter nå index 1, som ofte er engelsk*/}
-                <p>Short Effect: {ability.effect_entries.find(entry => entry.language.name === 'en').short_effect}</p> {/* Filtrere etter engelsk, henter nå index 1, som ofte er engelsk*/}
+                <p>Effect: {ability.effect_entries.find(entry => entry.language.name === 'en').effect}</p>
+                <p>Short Effect: {ability.effect_entries.find(entry => entry.language.name === 'en').short_effect}</p> 
               </section>
             ))}
           </article>

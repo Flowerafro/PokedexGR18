@@ -35,7 +35,7 @@ export default function Type() {
     
     return (
         <>
-        <section id="pokemons">
+        <section className="pokemons">
             {pokemonUrl?.map((poke, index) => {
                 return (
                     <PokeCard 

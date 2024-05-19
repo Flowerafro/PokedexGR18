@@ -17,18 +17,17 @@ export default function TeamDisplay() {
           // for hver pokemon i array, så fetch-er fra pokeApi basert på pokemons nummer
           fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.number}`)
           .then(response => response.json())
-            .then(pokemonTeam => {
-              // setPokeByTeam oppdaterer state med å ta "tidligere state", sprer den ut og legger den inn i en ny array
-              setPokeByTeam(prevState => [
-                ...prevState,
-                // ny objekt med ny name, id og image
-                {
-                  name: pokemonTeam.name,
-                  id: pokemonTeam.id,
-                  image: pokemonTeam.sprites.front_default
-                }
-              ]);
-            });
+          .then(pokemonTeam => {
+          // setPokeByTeam oppdaterer state ved å ta "tidligere state", sprer den ut og legger den inn i en ny array
+            setPokeByTeam(prevState => [...prevState,
+            // nytt objekt med ny name, id og image
+            {
+            name: pokemonTeam.name,
+            id: pokemonTeam.id,
+            image: pokemonTeam.sprites.front_default
+            }
+            ]);
+          });
         });
       });
   }, [slug]); 
@@ -38,62 +37,15 @@ export default function TeamDisplay() {
               setPokeByTeam(fetchedData)*/
   
   return (
-    <section className='pokemonteam'>
-    {pokeByTeam.map((pokemon, index) => (
-      <PokeCard 
-        key={index}
-        name={pokemon.name}
-        id={pokemon.id}
-        image={pokemon.image} 
-      />
-    ))}  
-  </section>
+    <section className='pokemons'>
+      {pokeByTeam.map((pokemon, index) => (
+        <PokeCard 
+          key={index}
+          name={pokemon.name}
+          id={pokemon.id}
+          image={pokemon.image}
+        />
+      ))}  
+    </section>
   )
 }
-  // import React, { useEffect, useState } from 'react';
-  // import { useParams } from 'react-router-dom';
-  // import { fetchTeams } from '../../sanity/services/teamServices';
-  // import PokeCard from './PokeCard';
-
-
-  // export default function TeamDisplay({pokeData, setPokeData}) {
-  //     const { slug } = useParams();
-
-
-  //     const [teamDisplay, setTeamDisplay] = useState([])
-
-
-  //     // kjører fetch fra Sanity
-  //     useEffect(() => {
-  //         fetchTeams(slug)
-  //         .then(data => {
-  //             console.log(data);
-  //             setTeamDisplay(data)
-  //         })
-  //     }, [slug]);
-
-  //     // hente pokemon-navn fra sanity basert på slug
-      
-
-  //     console.log(slug, "slug");
-
-  //     useEffect(()=> {
-  //         setPokeData()
-  //     })
-
-  //     return (
-  //         <section>
-  //             <PokeCard/>  
-  //         </section>
-  //     )
-  // }
-
-  // /*
-  //   {teamPokemons?.map((poke, index) => {
-  //                 <PokeCard 
-  //                 key={index}
-  //                 name={poke.name} 
-  //                 id={poke.id} 
-  //                 image={poke.sprites.front_default}
-  //             /> 
-  //             })} */

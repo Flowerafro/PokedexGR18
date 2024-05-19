@@ -20,27 +20,29 @@ body {
             align-items: center;
             font-family: 'Roboto', sans-serif;
             margin: auto;
-            padding-top: 2rem;
-            max-width: 60vw;
+            padding-top: 3rem;
+            padding-bottom: 5rem;
+            max-width: 70vw;
 
-            // styling til Main Pokemon
-            #pokemons {
+            // styling til visning av pokeCards i home og team
+            .pokemons {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 1.5rem;
                 justify-content: center;
                 align-items: center;
-                margin-bottom: 5rem;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                gap: 2rem;
             }
 
-            .teampoke {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1.5rem;
-                justify-content: center;
-                align-items: center;
-                margin-bottom: 5rem;
-            }
+            // .teampoke { // Alt funker uten denne?? Hva er den til??
+            //     display: flex;
+            //     flex-wrap: wrap;
+            //     gap: 1.5rem;
+            //     justify-content: center;
+            //     align-items: center;
+            //     margin-bottom: 5rem;
+            // }
 
             // Styling til Types på forsiden
             #types {
@@ -169,10 +171,6 @@ body {
                     }
                 }
             }
-            // styling til pokemons innad hvert team
-            .pokemonteam {
-                display: flex;
-            } 
         }
     }
 

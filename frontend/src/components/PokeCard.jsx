@@ -13,7 +13,7 @@ function PokeCard({name, id, index, image}) {
 
     return ( // Index i utskriften er ikke knyttet til index-propen tror jeg?!!
         <>
-        <Link key={index} to={`/pokemon/${name}`} className="pokecard">
+        <Link key={index} to={`/pokemon/${name}`} className={`pokecard ${'name'}`}> 
             <article>
                 <img src={image} alt={name} />
                 <h2>{name}</h2>
