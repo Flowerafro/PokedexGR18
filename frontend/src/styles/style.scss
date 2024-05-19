@@ -33,6 +33,15 @@ body {
                 margin-bottom: 5rem;
             }
 
+            .teampoke {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 5rem;
+            }
+
             // Styling til Types på forsiden
             #types {
                 display: flex;
@@ -156,3 +165,5 @@ body {
             } 
         }
     }
+
+    
