@@ -5,22 +5,37 @@ import { fetchPokemonByTeam } from '../../sanity/services/teamServices';
 import { useParams } from 'react-router-dom';
 
 export default function TeamDisplay() {
-
   const {slug} = useParams()
   const [pokeByTeam, setPokeByTeam] = useState([])
 
   useEffect(() => {
     fetchPokemonByTeam(slug)
-    .then(data => {;
-        setPokeByTeam(data)   
+    .then(data => {
+        let fetchedData = [];
+        data.map((pokemon) => {
+          fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.number}`)
+          .then(response => response.json())
+          .then(pokemonData => {
+            fetchedData.push({name: pokemonData.name, number: pokemonData.id})
+            if(fetchedData.length === data.length) {
+              setPokeByTeam(fetchedData)
+            }
+          })
+        })
     })
-}, [slug])
+  }, [slug])
   
   return (
-              <section>
-                  <PokeCard/>  
-              </section>
-          )
+    <section>
+      {pokeByTeam.map((pokemon, index) => (
+        <PokeCard 
+          key={index}
+          name={pokemon.name}
+          number={pokemon.number}
+        />
+      ))}  
+    </section>
+  )
 }
   // import React, { useEffect, useState } from 'react';
   // import { useParams } from 'react-router-dom';

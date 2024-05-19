@@ -16,15 +16,16 @@ export async function fetchTeams() {
 // Brukes til utskrift av relevante pokeCard i team-komponentet
 
 export async function fetchPokemonByTeam(slug) {
-    const data = await client.fetch(`*[_type == "pokemon" && slug_url.current == $slug]{
+    const data = await client.fetch(`*[_type == "teams" && slug_url.current == $slug]{
         _id,
         title,
         "slug": slug_url.current,
-        pokemon[]->{
-            _id,
+        pokemon[]{
             name,
+            number,
         }
     }`, {slug})
-    console.log(data.pokemon) // Får undefined med data.pokemon og en tom array med bare data...
-    return data
+
+    console.log(data[0].pokemon) 
+    return data[0].pokemon 
 }
