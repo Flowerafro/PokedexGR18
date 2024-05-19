@@ -38,7 +38,7 @@ export default function TeamDisplay() {
               setPokeByTeam(fetchedData)*/
   
   return (
-    <section className='teampoke'>
+    <section className='pokemonteam'>
     {pokeByTeam.map((pokemon, index) => (
       <PokeCard 
         key={index}
