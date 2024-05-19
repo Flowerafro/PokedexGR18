@@ -38,32 +38,18 @@ export default function Pokemon() {
     <section id="pokemon">
       {details?.sprites && (
         <>
-          <section>
-          <h1>{details.name.charAt(0).toUpperCase() + details.name.slice(1)}</h1>
-            <article className={`pokemon-img ${details ? details.types[0].type.name : ''}`}>
-              <img src={details.sprites.other?.['official-artwork'].front_default} alt={details.name} />  
-            </article>
-            
-            <article className="pokemon-abilities">
-              <h1>Abilities</h1>
-              {abilities?.map((ability, index) => (
-                <div key={index}>
-                  <h2>{ability.name.charAt(0).toUpperCase() + ability.name.slice(1)}</h2>
-                  <p>Effect: {ability.effect_entries.find(entry => entry.language.name === 'en').effect}</p> {/* Filtrere etter engelsk, henter nå index 1, som ofte er engelsk*/}
-                  <p>Short Effect: {ability.effect_entries.find(entry => entry.language.name === 'en').short_effect}</p> {/* Filtrere etter engelsk, henter nå index 1, som ofte er engelsk*/}
-                </div>
-              ))}
-            </article>
-          </section>
+          <article className={`pokemon-img ${details ? details.types[0].type.name : ''}`}> {/* Er dette endelig kode? Kilde her?*/}
+            <h2>{details.name.charAt(0).toUpperCase() + details.name.slice(1)}</h2>
+            <img src={details.sprites.other?.['official-artwork'].front_default} alt={details.name} />
+          </article>
 
           <section>
             <article className="pokemon-type">
-              <h1>Types</h1>
+              <h2>Types</h2>
               {details.types?.map((type, index) => (<TypeCard key={index} name={type.type.name} />))}
             </article>
-
             <article className="pokemon-stats">
-              <h1>Stats</h1>
+              <h2>Stats</h2>
               {details.stats?.map((stat, index) => (
                 <ul key={index} className="stats">
                   <li>{stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}: </li>
@@ -73,6 +59,17 @@ export default function Pokemon() {
               ))}
             </article>
           </section>
+
+          <article className="pokemon-abilities">
+            <h2>Abilities</h2>
+            {abilities?.map((ability, index) => (
+              <section key={index}>
+                <h3>{ability.name.charAt(0).toUpperCase() + ability.name.slice(1)}</h3>
+                <p>Effect: {ability.effect_entries.find(entry => entry.language.name === 'en').effect}</p> {/* Filtrere etter engelsk, henter nå index 1, som ofte er engelsk*/}
+                <p>Short Effect: {ability.effect_entries.find(entry => entry.language.name === 'en').short_effect}</p> {/* Filtrere etter engelsk, henter nå index 1, som ofte er engelsk*/}
+              </section>
+            ))}
+          </article>
         </>
       )}
     </section>
