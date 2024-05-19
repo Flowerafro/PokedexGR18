@@ -13,7 +13,6 @@ export default function Teams() {
         })
     }, [])
 
-    // <Link to={`/teams/${team.slug_url}`}> // Må legge til en Link to som sender brukeren til listen over Pokemons som er under laget
 
     return (
         <>
