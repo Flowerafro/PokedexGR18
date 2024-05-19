@@ -153,6 +153,10 @@ body {
                         object-fit: cover;
                     }
                 }
+            }
+            // styling til pokemons innad hvert team
+            .pokemonteam {
+                display: flex;
             } 
         }
     }
