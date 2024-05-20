@@ -40,17 +40,17 @@ export default function Type() {
         <h2>{slug.toUpperCase()}</h2>
         </span>
         <section className="pokemons">
-            {pokemonUrl?.map((poke, index) => {
-                return (
-                    <PokeCard 
-                        key={index} 
-                        name={poke.name} 
-                        id={poke.id} 
-                        image={poke.sprites.front_default}
-                        typeColor={slug}
-                    />
-                );
-            })}
+        {pokemonUrl?.sort((a, b) => a.id - b.id).map((poke, index) => {
+            return (
+            <PokeCard 
+                key={index} 
+                name={poke.name} 
+                id={poke.id} 
+                image={poke.sprites.front_default}
+                typeColor={slug}
+            />
+            );
+        })}
         </section>
         </>
     )
