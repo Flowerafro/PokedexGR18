@@ -9,9 +9,9 @@
     min-width: 230px;
 
     border-radius: 1rem;
-    background-color: #f0f0f0;
+    background-color: var(--card-bg);
     box-shadow: 10px 20px 10px 0px rgba(0,0,0,0.1);
-    color: black;
+    color: var(--font-clr);
     text-decoration: none;
     text-transform: capitalize;
 
