@@ -43,6 +43,7 @@ export default function Type() {
                         name={poke.name} 
                         id={poke.id} 
                         image={poke.sprites.front_default}
+                        typeColor={slug}
                     />
                 );
             })}

@@ -6,7 +6,7 @@ export default function TypeCard({ index, name }) {
         <>
         <Link to={`/type/${name}`} key={index} className="typecard">
             <button className={`${name}`}>
-                <img src={`/src/assets/${name}.png`}/>
+                <img src={`/src/assets/${name}.png`} alt="image of poketype"/>
                 <h2>{name.charAt(0).toUpperCase() + name.slice(1)}</h2>
             </button>
         </Link>
