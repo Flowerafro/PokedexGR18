@@ -19,18 +19,18 @@
         transform: scale(1.05);
     }
 
-    article {
-    min-width: 230px;
-    border-radius: 1rem;
-    border-style: none;
+        article {
+        min-width: 230px;
+        border-radius: 1rem;
+        border-style: none;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    
-    
-    }
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        
+        
+        }
 }
