@@ -32,11 +32,12 @@ export default function TeamDisplay() {
       });
   }, [slug]); 
 
- /* fetchedData.push({name: pokemonData.name, number: pokemonData.id})
-            if(fetchedData.length === data.length) {
-              setPokeByTeam(fetchedData)*/
+
   
   return (
+    <>
+    <h1>{slug.toUpperCase()}</h1>
+    <h2>Pokemon</h2>
     <section className='pokemons'>
       {pokeByTeam.map((pokemon, index) => (
         <PokeCard 
@@ -47,5 +48,6 @@ export default function TeamDisplay() {
         />
       ))}  
     </section>
+    </>
   )
 }
