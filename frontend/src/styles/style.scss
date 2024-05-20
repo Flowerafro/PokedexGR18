@@ -144,23 +144,22 @@ body {
                             } 
                         }
                     }
-                }
-                
+                }   
             } 
         }
 
             // styling til teams hentet fra Sanity
             .teams-box {
                 display: flex;
+                flex-wrap: wrap;
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
                 gap: 2rem;
                 
-
                 .teams {
-                    width: 80%;
-                    height: auto;
+                    max-width: 200px;
+                    min-height: 250px;
 
                     border-style: solid;
                     border-color: #ebe8e8;
