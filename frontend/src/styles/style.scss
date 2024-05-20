@@ -53,6 +53,18 @@ body {
                 margin-bottom: 5rem;
             }
 
+            .typeTitle {
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                gap: 1rem;
+                
+                img {
+                    width: 4rem;
+                    height: 4rem;
+                }
+            }
+
             // styling til feilmelding
             .notfound {
                 margin-top: 10rem ;

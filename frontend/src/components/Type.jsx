@@ -35,6 +35,10 @@ export default function Type() {
     
     return (
         <>
+        <span className="typeTitle">
+        <img src={`/src/assets/${slug}.png`} alt="image of poketype"/>
+        <h2>{slug.toUpperCase()}</h2>
+        </span>
         <section className="pokemons">
             {pokemonUrl?.map((poke, index) => {
                 return (
