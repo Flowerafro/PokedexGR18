@@ -9,8 +9,6 @@
     min-width: 230px;
 
     border-radius: 1rem;
-    border-style: solid;
-    border-color: #ebe8e8;
     background-color: #f4f4f4;
     box-shadow: 10px 20px 10px 0px rgba(0,0,0,0.1);
     color: black;
@@ -19,5 +17,17 @@
 
     &:hover {
         transform: scale(1.05);
+    }
+
+    article {
+    min-width: 230px;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-style: none;
     }
 }
