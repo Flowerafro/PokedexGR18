@@ -67,6 +67,7 @@ export default function Pokemon() {
                 <h3>{ability.name.charAt(0).toUpperCase() + ability.name.slice(1)}</h3>
                 <p>Effect: {ability.effect_entries.find(entry => entry.language.name === 'en').effect}</p>
                 <p>Short Effect: {ability.effect_entries.find(entry => entry.language.name === 'en').short_effect}</p> 
+                 {/* Her har vi brukt copilot for å få tak i short effect og effect. Se dokument for skjermbilder */}
               </section>
             ))}
           </article>
