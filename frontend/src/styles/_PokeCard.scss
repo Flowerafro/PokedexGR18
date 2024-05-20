@@ -12,7 +12,7 @@
     background-color: #f0f0f0;
     box-shadow: 10px 20px 10px 0px rgba(0,0,0,0.1);
     color: black;
-    text-decoration: none !important;
+    text-decoration: none;
     text-transform: capitalize;
 
     &:hover {
@@ -22,12 +22,15 @@
     article {
     min-width: 230px;
     border-radius: 1rem;
-    display: flex;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     border-style: none;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    
+    
     }
 }
