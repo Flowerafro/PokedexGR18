@@ -61,16 +61,18 @@ export default function Pokemon() {
           </section>
 
           <article className="pokemon-abilities">
-            <h2>ABILITIES</h2>
-            {abilities?.map((ability, index) => (
+          <h2>ABILITIES</h2>
+          {abilities?.map((ability, index) => {
+            const effectEntry = ability.effect_entries.find(entry => entry.language.name === 'en');
+            return (
               <section key={index}>
                 <h3>{ability.name.charAt(0).toUpperCase() + ability.name.slice(1)}</h3>
-                <p>Effect: {ability.effect_entries.find(entry => entry.language.name === 'en').effect}</p>
-                <p>Short Effect: {ability.effect_entries.find(entry => entry.language.name === 'en').short_effect}</p> 
-                 {/* Her har vi brukt copilot for å få tak i short effect og effect. Se dokument for skjermbilder */}
+                {effectEntry && <p>Effect: {effectEntry.effect}</p>}
+                {effectEntry && <p>Short Effect: {effectEntry.short_effect}</p>}
               </section>
-            ))}
-          </article>
+            );
+          })}
+        </article>
         </>
       )}
     </section>
