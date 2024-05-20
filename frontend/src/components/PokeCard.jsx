@@ -10,11 +10,11 @@ function PokeCard({name, id, index, image, typeColor}) {
         paddedId = id;
     }
 
-    return ( // Index i utskriften er ikke knyttet til index-propen tror jeg?!!
+    return ( 
         <>
         <Link key={index} to={`/pokemon/${name}`} className={`pokecard `}> 
             <article className={`${typeColor}`}>
-                <img src={image} alt={name} />
+                {image ? (<img src={image} alt={name} />) : (<p className="noimage">No image found </p>)}
                 <h2>{name}</h2>
                 <p>#{paddedId}</p>
             </article>
@@ -24,3 +24,5 @@ function PokeCard({name, id, index, image, typeColor}) {
 }
 
 export default PokeCard;
+
+//  {item.cover_i ? (<img src={`https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg`} />) : (<p className="noimage">No image available</p>)}
