@@ -12,8 +12,8 @@
         min-height: 250px;
 
         border-style: solid;
-        border-color: #ebe8e8;
-        background-color: #f4f4f4;
+        border-color: var(--card-border);
+        background-color: var(--card-bg);
         border-radius: 1rem;
         box-shadow: 10px 20px 10px 0px rgba(0,0,0,0.1);
 

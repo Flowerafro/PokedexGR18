@@ -53,7 +53,7 @@ export default function Pokemon() {
               {details.stats?.map((stat, index) => (
                 <ul key={index} className="stats">
                   <li>{stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}: </li>
-                  <progress value={stat.base_stat} max="100"></progress>
+                  <progress value={stat.base_stat} max="200"></progress>
                   <li>{stat.base_stat}</li>
                 </ul>
               ))}

@@ -8,11 +8,11 @@ export default function SearchResults() {
     const [result, setResult] = useState()
     //state til loading slik at result er tilgjengelig når komp renderes
     const [loading, setLoading] = useState(true)
-    // state til feilmelding hvis pokemon ikke finnes i søk
+    // state til feilmelding hvis pokemon ikke finnes i søk (kilde: finnes i eksamensdokumentet)
     const [loadingMessage, setLoadingMessage] = useState("Søker etter pokemon ...")
 
     const getResult = async() => {
-        setLoading(true) // for hvert søk settes loading til true/default
+        setLoading(true) 
         try{
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${slug}`)
             const data = await response.json()
@@ -31,7 +31,7 @@ export default function SearchResults() {
    
     console.log(result)
 
-    // når søket skjer vises en "loading-melding" og om søket ikke gir resultat, vil en feilmelding vises
+    // For å få en feilmelding når søkene ikke stemmer over ens med Pokemon-navn i API har vi laget en loading state. Kilden er oppført i eksamensdokumentet
     if(loading){
         return (
             <>

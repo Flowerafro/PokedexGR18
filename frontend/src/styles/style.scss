@@ -6,12 +6,21 @@
 @import 'teams';
 @import 'pokemon';
 
+:root {
+    --card-bg: #f0f0f0;
+    --card-border: #ebe8e8;
+    --header-bg: #ffffff;
+    --font: 'Roboto', sans-serif;
+    --font-clr: #000;
+    --btn-clr1: #fff;
+    --btn-clr2: grey; 
+}
 
 body {
     margin: 0;
     padding: 0;
 
-    font-family: "Roboto", sans-serif;
+    font-family: var(--font);
     
     #root {
         width: 100%;
@@ -63,7 +72,7 @@ body {
             // styling til feilmelding
             .notfound {
                 margin-top: 10rem ;
-                font-family: 'Roboto', sans-serif;
+                font-family: var(--font);
                 font-size: 1.5rem;
 
             }
