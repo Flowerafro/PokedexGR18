@@ -37,14 +37,13 @@ export default function Type() {
         <>
         <section className="pokemons">
             {pokemonUrl?.map((poke, index) => {
-                const typeClass = poke.types[0].type.name;
                 return (
                     <PokeCard 
                         key={index} 
                         name={poke.name} 
                         id={poke.id} 
                         image={poke.sprites.front_default}
-                        className={slug}
+                        typeColor={slug}
                     />
                 );
             })}

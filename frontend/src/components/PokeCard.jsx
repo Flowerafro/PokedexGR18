@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function PokeCard({name, id, index, image, className}) {
+function PokeCard({name, id, index, image, typeColor}) {
     let paddedId;
     if (id < 10) {
         paddedId = '00' + id;
@@ -14,7 +14,7 @@ function PokeCard({name, id, index, image, className}) {
     return ( // Index i utskriften er ikke knyttet til index-propen tror jeg?!!
         <>
         <Link key={index} to={`/pokemon/${name}`} className={`pokecard `}> 
-            <article className={`${className}`}>
+            <article className={`${typeColor}`}>
                 <img src={image} alt={name} />
                 <h2>{name}</h2>
                 <p>#{paddedId}</p>
