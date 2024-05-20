@@ -1,6 +1,5 @@
 import { client } from "./client";
-// Fetcher alt innhold om teamene fra Sanity, utenom tilhørende pokemon
-// Brukes til utskrift av teamene i teams-komponentet
+
 
 export async function fetchTeams() {
     const data = await client.fetch(`*[_type == "teams"]{
@@ -12,8 +11,7 @@ export async function fetchTeams() {
     return data
 }
 
-// Fetcher relevant innhold om klikket team (basert på slug) og tilhørende pokemon fra Sanity
-// Brukes til utskrift av relevante pokeCard i team-komponentet
+
 
 export async function fetchPokemonByTeam(slug) {
     const data = await client.fetch(`*[_type == "teams" && slug_url.current == $slug]{

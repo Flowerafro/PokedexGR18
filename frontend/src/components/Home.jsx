@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 export default function Home({pokeData, setPokeData}) {
 
     const [pokemon, setPokemon] = useState([])
-    //const [pokeData, setPokeData] = useState([])
-    // state til Type
     const [type, setType] = useState([])
 
     // FETCH til MAIN POKEMON

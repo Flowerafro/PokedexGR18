@@ -24,5 +24,3 @@ function PokeCard({name, id, index, image, typeColor}) {
 }
 
 export default PokeCard;
-
-//  {item.cover_i ? (<img src={`https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg`} />) : (<p className="noimage">No image available</p>)}
