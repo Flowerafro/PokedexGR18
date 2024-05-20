@@ -8,7 +8,7 @@ import Layout from './components/Layout'
 import Pokemon from './components/Pokemon'
 import PokeCard from './components/PokeCard'
 import SearchResults from './components/SearchResults'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Team from './components/Team'
 
 function App() {

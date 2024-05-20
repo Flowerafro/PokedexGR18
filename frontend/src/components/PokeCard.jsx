@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function PokeCard({name, id, index, image, typeColor}) {
