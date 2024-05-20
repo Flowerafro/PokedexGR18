@@ -1,6 +1,5 @@
 import { client } from "./client";
 
-
 export async function fetchTeams() {
     const data = await client.fetch(`*[_type == "teams"]{
         _id,
@@ -10,8 +9,6 @@ export async function fetchTeams() {
     }`)
     return data
 }
-
-
 
 export async function fetchPokemonByTeam(slug) {
     const data = await client.fetch(`*[_type == "teams" && slug_url.current == $slug]{

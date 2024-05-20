@@ -2,8 +2,6 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import PokeCard from "./PokeCard"
 
-//Dette komponentet inneholder en mapping av fetch-en som henter pokemon-endepunktet i API-et og filtrerer på slugen??
-
 export default function Type() {
 
     const {slug} = useParams()
