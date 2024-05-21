@@ -35,8 +35,10 @@ body {
             padding-top: 3rem;
             padding-bottom: 5rem;
             max-width: 60vw;
-            text-align: center;
 
+            .title {
+                text-align: center;
+            }
 
             // styling til visning av pokeCards i home og team
             .pokemons {
@@ -62,6 +64,7 @@ body {
                 display: flex;
                 justify-content: left;
                 align-items: center;
+                justify-content: center;
                 gap: 1rem;
                 
                 img {

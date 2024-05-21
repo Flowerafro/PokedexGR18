@@ -19,7 +19,7 @@ export default function Teams() {
 
     return (
         <section>
-            <h1>Teams</h1>
+            <h1 className='title'>Teams</h1>
             <div className='teams-box'>
                 {teams.map((team, index) => {
                     return (

@@ -45,7 +45,7 @@ export default function Home({pokeData, setPokeData}) {
     return (
         <> 
         <section>
-            <h1>Main pokemon</h1>
+            <h1 className='title'>Main pokemon</h1>
             <div className="pokemons">
                 {pokeData?.filter(poke => poke.id <= 9)
                 .sort((a, b) => a.id - b.id)
@@ -63,7 +63,7 @@ export default function Home({pokeData, setPokeData}) {
         </section>
 
         <section>
-            <h2>Types</h2>
+            <h2 className='title'>Types</h2>
             <div id="types">
                 {type?.map((type, index) => {
                     return (
