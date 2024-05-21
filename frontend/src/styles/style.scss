@@ -35,6 +35,8 @@ body {
             padding-top: 3rem;
             padding-bottom: 5rem;
             max-width: 60vw;
+            text-align: center;
+
 
             // styling til visning av pokeCards i home og team
             .pokemons {
@@ -47,7 +49,6 @@ body {
                 gap: 2rem;
             }
 
-         
             // Styling til Types på forsiden
             #types {
                 display: flex;

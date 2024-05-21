@@ -31,17 +31,18 @@ export default function TeamDisplay() {
   
   return (
     <>
-    <h1>{slug.toUpperCase()}</h1>
-    <h2>Pokemon</h2>
-    <section className='pokemons'>
-      {pokeByTeam.map((pokemon, index) => (
-        <PokeCard 
-          key={index}
-          name={pokemon.name}
-          id={pokemon.id}
-          image={pokemon.image}
-        />
-      ))}  
+    <section>
+      <h1>{slug.toUpperCase()}</h1>
+      <div className='pokemons'>
+        {pokeByTeam.map((pokemon, index) => (
+          <PokeCard 
+            key={index}
+            name={pokemon.name}
+            id={pokemon.id}
+            image={pokemon.image}
+          />
+        ))} 
+      </div>
     </section>
     </>
   )

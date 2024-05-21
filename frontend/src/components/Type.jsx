@@ -31,24 +31,25 @@ export default function Type() {
 
     console.log(pokemonUrl)
     
+    // Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections, or else use a div element instead for any cases where no heading is needed.
+
     return (
         <>
-        <span className="typeTitle">
-        <img src={`/src/assets/${slug}.png`} alt="image of poketype"/>
-        <h2>{slug.toUpperCase()}</h2>
-        </span>
-        <section className="pokemons">
-        {pokemonUrl?.sort((a, b) => a.id - b.id).map((poke, index) => {
-            return (
-            <PokeCard 
-                key={index} 
-                name={poke.name} 
-                id={poke.id} 
-                image={poke.sprites.front_default}
-                typeColor={slug}
-            />
-            );
-        })}
+        <section>
+            <h2 className="typeTitle"><img src={`/src/assets/${slug}.png`} alt="image of poketype"/>{slug.toUpperCase()}</h2>
+            <div className="pokemons">
+                {pokemonUrl?.sort((a, b) => a.id - b.id).map((poke, index) => {
+                    return (
+                    <PokeCard 
+                        key={index} 
+                        name={poke.name} 
+                        id={poke.id} 
+                        image={poke.sprites.front_default}
+                        typeColor={slug}
+                    />
+                    );
+                })}
+            </div>
         </section>
         </>
     )

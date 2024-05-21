@@ -25,10 +25,13 @@ export default function Layout({children}) {
                 <label htmlFor="search"></label>
                 <input type="text" id="search" placeholder="Søk etter pokemon" onChange={(e) => setInput(e.target.value)}></input>
                 <Link to={`/searchresults/${input}`}>
-                <button type="submit" value="Søk">
-                <FontAwesomeIcon icon={faSearch} /> 
-                </button>
-            </Link>
+                    {/* Her får vi error når vi validerer HTML: "The element button must not appear as a descendant of the a element."*/}
+                    {/* Vi har ikke funnet en måte å fjerne button på, uten å miste funksjoneliteten vi har bygget opp.*/}
+                    {/* Om tiden hadde strukket til kunne vi jobbet mer med det, og vi renger med at det finnes en fornuftig måte å gjøre dette på, egentlig */}
+                    <button type="submit" value="Søk">
+                    <FontAwesomeIcon icon={faSearch} /> 
+                    </button>
+                </Link>
             </form>
         </header>
         <main>

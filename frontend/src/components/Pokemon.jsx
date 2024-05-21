@@ -11,6 +11,10 @@ export default function Pokemon() {
   // Her har vi først brukt et forslag fra Copilot i VS code til å fetche og skrive ut pokemon-komponentet. Dette forslaget syns vi virket "for komplisert", og tenkte av vi kunne gjøre det mer som i home-komponentet.
   // Vi brukte så Bing Copilot til å gjøre fetchen slik den er i home, slik vi mener er mer oversiktlig. I sette steget hjalp Bing Chat oss mest med sjekking av syntax og korrekturlesing.
 
+  // Gul error: Article lacks heading. Consider using h2-h6 elements to add identifying headings to all articles.
+  // Gul error: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections, or else use a div element instead for any cases where no heading is needed.
+  // Element progress not allowed as child of element ul in this context. (Suppressing further errors from this subtree.)
+
   const getDetails = async () => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${slug}/`)
     .then(response => response.json())
@@ -38,29 +42,29 @@ export default function Pokemon() {
     <section id="pokemon">
       {details?.sprites && (
         <>
-          <article className={`pokemon-img ${details ? details.types[0].type.name : ''}`}>
+        <article className={`pokemon-img ${details ? details.types[0].type.name : ''}`}>
           <h2>{details.name.toUpperCase()}</h2>
-            <img src={details.sprites.other?.['official-artwork'].front_default} alt={details.name} />
-          </article>
+          <img src={details.sprites.other?.['official-artwork'].front_default} alt={details.name} />
+        </article>
 
-          <section>
-            <article className="pokemon-type">
-              <h2>TYPE(S)</h2>
-              {details.types?.map((type, index) => (<TypeCard key={index} name={type.type.name} />))}
-            </article>
-            <article className="pokemon-stats">
-              <h2>STATS</h2>
-              {details.stats?.map((stat, index) => (
-                <ul key={index} className="stats">
-                  <li>{stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}: </li>
-                  <progress value={stat.base_stat} max="200"></progress>
-                  <li>{stat.base_stat}</li>
-                </ul>
-              ))}
-            </article>
+        <article>
+          <section className="pokemon-type">
+            <h2>TYPE(S)</h2>
+            {details.types?.map((type, index) => (<TypeCard key={index} name={type.type.name} />))}
           </section>
+          <section className="pokemon-stats">
+            <h2>STATS</h2>
+            {details.stats?.map((stat, index) => (
+              <ul key={index} className="stats">
+                <li>{stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}: </li>
+                <progress value={stat.base_stat} max="200"></progress>
+                <li>{stat.base_stat}</li>
+              </ul>
+            ))}
+          </section>
+        </article>
 
-          <article className="pokemon-abilities">
+        <article className="pokemon-abilities">
           <h2>ABILITIES</h2>
           {abilities?.map((ability, index) => {
             const effectEntry = ability.effect_entries.find(entry => entry.language.name === 'en');

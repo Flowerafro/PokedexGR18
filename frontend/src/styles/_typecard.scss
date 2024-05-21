@@ -3,32 +3,28 @@
 .typecard {
     margin: 10px;
     text-decoration: none;
+    color: var(--font-clr);
+    height: 50px;
+    width: 120px;
+    display: flex;
+    border-style: none;
+    border-radius: 8px;
+    align-items: center;
+    gap: 7px;
 
-    :hover {
-        border-style: solid;
-        border-color: rgb(65, 63, 63);
+    &:hover {
+        transform: scale(1.05);
         cursor: pointer;
+    } 
+
+    img {
+        width: 30px;
+        height: 30px;
+        pointer-events: none;
     }
 
-    button {
-        height: 50px;
-        width: 120px;
-        display: flex;
-        border-style: none;
-        border-radius: 8px;
-        align-items: center;
-        gap: 7px;
-
-        img {
-            width: 30px;
-            height: 30px;
-            pointer-events: none;
-        }
-
-        h2 {
-            font-size: 12px;
-            pointer-events: none;
-        }
-
+    h2 {
+        font-size: 12px;
+        pointer-events: none;
     }
-}    
+}  

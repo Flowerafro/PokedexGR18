@@ -44,32 +44,36 @@ export default function Home({pokeData, setPokeData}) {
     
     return (
         <> 
-        <h1>Main pokemon</h1>
-         <section className="pokemons">
-            {pokeData?.filter(poke => poke.id <= 9)
-            .sort((a, b) => a.id - b.id)
-            .map((poke, index) => {
-                return (
-                    <PokeCard 
-                        key={index}
-                        name={poke.name} 
-                        id={poke.id} 
-                        image={poke.sprites.front_default}
-                    />
-                );
-            })}
+        <section>
+            <h1>Main pokemon</h1>
+            <div className="pokemons">
+                {pokeData?.filter(poke => poke.id <= 9)
+                .sort((a, b) => a.id - b.id)
+                .map((poke, index) => {
+                    return (
+                        <PokeCard 
+                            key={index}
+                            name={poke.name} 
+                            id={poke.id} 
+                            image={poke.sprites.front_default}
+                        />
+                    );
+                })}
+            </div>
         </section>
 
-        <h2>Types</h2>
-        <section id="types">
-            {type?.map((type, index) => {
-                return (
-                    <TypeCard
-                    key={index}
-                    name={type.name}
-                     />
-                )
-            })}
+        <section>
+            <h2>Types</h2>
+            <div id="types">
+                {type?.map((type, index) => {
+                    return (
+                        <TypeCard
+                        key={index}
+                        name={type.name}
+                        />
+                    )
+                })}
+            </div>
         </section>
         </>
         

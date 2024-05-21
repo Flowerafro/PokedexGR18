@@ -4,7 +4,7 @@
     justify-content: left;
     gap: 1rem;
 
-    article {
+    section {
         min-width: 50%;
         max-width: 100%;
 
@@ -39,7 +39,7 @@
         }
     }
 
-    section {
+    article {
         min-width: 40%;
         max-width: 100%;
 
@@ -64,8 +64,10 @@
                 list-style: none;
 
                 li {
-                    width: 10%;
-                } 
+                width: 20%;
+                }
+
+                
             }
         }
     }   
